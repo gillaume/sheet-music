@@ -7,7 +7,7 @@
   instrument = "Marimba"
   composer = "Frank Zappa"
   copyright = "15.12.2022"
-  tagline = "https://www.youtube.com/watch?v=L4_6Q6Tz0Eg&ab_channel=Mewthic"
+  tagline = "https://www.youtube.com/watch?v=WDR1j1fwhtA&ab_channel=brennenrigley"
 }
 
 \paper {
