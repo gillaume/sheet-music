@@ -10,7 +10,7 @@
 }
 
 \paper {
-  #(set-paper-size "a4landscape")
+  #(set-paper-size "a4portrait")
   top-margin = 30
 }
 
@@ -27,7 +27,7 @@ partition = \relative do'' {
   
   si4 
   fad'32 fad dod si la'8  ~  la16  \slashedGrace do8 sol16  mi8 
-  mi16 mi8 la16  \tuplet 3/2 { sol16 do  fa, }  la8  \tuplet 3/2 {  mi16 r re  }  do'8   ~ 
+  mi16 la8 fad16  \tuplet 3/2 { sol16 do  fa, }  la8  \tuplet 3/2 {  mi16 r re  }  do'8   ~ 
   \tuplet 5/4 { do8 \slashedGrace do8 la sol fa re } 
   dod8. [ re32 sol ] mi2.
   do32 mi re fa mi sol, fa' re 
@@ -41,7 +41,7 @@ partition = \relative do'' {
   \tuplet 6/4 { mi la sib fa do! sol } 
               }
   
-  la4 ~ la16 la'8. ~ la8 la8 ~ la8. la,16
+  la4 ~ la16 la'8. ~ la8 la8 ~ la8. la,16 ~
   la4 si' ~ si16 dod,8. ~ dod8 mi ~
   mi8. dod16 ~ dod4
   \tuplet 3/2 {
@@ -67,12 +67,49 @@ partition = \relative do'' {
   }
   %16
   fad4 fad,32 si si la si8 ~ si16 \slashedGrace dod8 si16 fad8 ~ fad16 sold8 si,16
-
+  \tuplet 3/2 { do16 sib' fa } mib'8 \tuplet 3/2 { reb16 r sib  } do8 ~ 
+  \tuplet 5/4 { do lab reb solb sib, }
+  mib8. reb32 fa do2.
+  
+  do32 mi re fa mi sol, fa' re \tuplet 3/2 { la'16 do mi, } \tuplet 5/4 { mi32 fa mi re la }
+  \tuplet 7/4 { sib16 do do re re mi fa } \tuplet 7/4 { la sol, sol re' fa, fa mi  }
+  si'2 
+  \tuplet 3/2 {
+  \tuplet 5/4 { si16 dod dod si re } \tuplet 5/4 { fa la, la sib dod } 
+  \tuplet 6/4 { mi la sib fa do! sol }
+  }
+  la4 ~ la16 la'8. ~ la8 la ~ la8. la,16 ~
+  la4 si'4 ~ si16 dod,8. ~ dod8 mi ~
+  mi8. dod16 ~ dod4 
+  
+  \tuplet 3/2 {
+  \tuplet 5/4 { si16 dod dod la re } \tuplet 5/4 { mib sol, sol la fa } 
+  \tuplet 6/4 { mi sol sol fa fa sib }
+  }
+  sib1 ~
+  sib4 la8 la32 sol fad do' \tuplet 3/2 { re,16 la' sol } \tuplet 5/4 { si32 sol sol la fad }
+  \tuplet 5/4 { r16 si mi, la fad }
+  
+  \tuplet 5/4 { fad' mi si re mi, }
+  \tuplet 5/4 { fad' mi si re mi, ~ } mi2
+  
+  r8 \tuplet 5/4 { r32 fa sol do si } \tuplet 5/4 { fad' sol mi la fad } sol fad fad mi
+  \tuplet 11/8 { re'32 la la si do mi si si do si, la' }
+  \tuplet 11/8 { si mi, mi sol sol re' fad, fad la mi si  }
+  \tuplet 3/2 { la'4 do, do } sol'2
+  
+  \tuplet 3/2 {
+  \tuplet 5/4 { r16 mib sib' lab fa } \tuplet 5/4 { fa sol mib sib lab' }
+  \tuplet 6/4 { do sib sib lab lab fa  }
+  }
+  \tuplet 11/8 { sib32 solb solb lab fa reb reb mib sol, lab' fa }
+  \tuplet 11/8 { fa mib solb fa reb mib lab reb, solb fa, mib }
+  do'1
 }
 
 \score {
   \new Staff \with {
-    instrumentName = "Synthé"
+    instrumentName = "Synth"
     midiInstrument = "xylophone"
   } \partition
   \layout { }
