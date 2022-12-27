@@ -1,17 +1,31 @@
+#(set-global-staff-size 19)
+
 \version "2.22.0"
 \include "italiano.ly"
-global = {
-  \key si \major
-  \time 3/2
+
+
+\paper {
+
+line-width = 186\mm
+#(define left-margin (/ (- paper-width  (* 186 mm)) 2))
+#(define top-margin (/ (- paper-height (* 259 mm)) 2))
+#(define bottom-margin (/ (- paper-height (* 253 mm)) 2))
+between-system-padding = 8\mm
+ indent = 22\mm
 }
 
 \header {
   title = "Debussy: Images, Books 1 & 2 (Bavouzet, Thibaudet)"
   composer = "Debussy"
   tagline = \markup {
-    \line { https://www.youtube.com/watch?v=3VDUGu8NBmA&ab_channel=AshishXiangyiKumar }
-    \center-column { a bbb c } 
+    \line { https://youtu.be/3VDUGu8NBmA }
+    \line { [ 12 décembre 2022 ] }
   }
+}
+
+global = {
+  \key si \major
+  \time 3/2
 }
 
 
@@ -23,10 +37,21 @@ rightOne = \relative do'' {
   lad\> \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad\)\!
   sold'4\rest\p \tuplet 3/2 { sold'8\( sold si } \autoBeamOff si sold \autoBeamOn \tuplet 3/2 { sold8 sold si } si sold sold4\)
   sold,4\rest \tuplet 3/2 { red'8\( red fad } \autoBeamOff fad8 red \autoBeamOn \tuplet 3/2 { red8 red fad } fad8 red red4\)
-  r4 \tuplet 3/2 { red8 dod red } sold,4 \tuplet 3/2 { sold8 fad sold } \clef bass dod,4 ~ \tuplet 3/2 { dod8 si dod } 
+  r4 \tuplet 3/2 { red8\( dod red } sold,4 \tuplet 3/2 { sold8 fad sold } \clef bass dod,4 ~ \tuplet 3/2 { dod8 si dod } 
   red4 ~ \tuplet 3/2 { red8 dod red } \clef treble < sold, lad dodd mid lad >4_. < red' fadd lad red >_. < red fadd lad red >2 ~
-  q2. si'4\rest si2\rest \clef bass
+  q2.\) si'4\rest si2\rest \clef bass
+  \stemDown
+  lad,4\pp\(\< red dod2 ~ dod8 lad \tuplet 3/2 {  sold [ lad dod\! ] }
+  \clef treble \bar "||"  \time 4/2 red8..\< ( fad32 mi4\! ) \stemUp 
+  << { sold8..\< ( si32 lad4\! ) dod2 } \\ {  s4 sold4 ~ sold2  } >> 
   
+  lad\) ~
+ \bar "||" \time 3/2 lad4\( lad8 si \tuplet 3/2 { sold lad fad } red4 fad lad\) ~
+ lad4\( \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } red4 dod ~ <dod mi>\)
+\clef bass r4
+\clef treble si''4 ( la2. )  la4 ~
+la fad red2.
+
 
 }
 
@@ -40,9 +65,30 @@ rightTwo = \relative do'' {
   s4 <sold si>4 <la dod> <si red> <la dod> <sold si>
   s4 <sold si>4 <la dod> <si red> <la dod> <sold si>
   s4
-  < mi sold > red < la dod > \clef bass < fad sold >2 
+  < mi sold >\p red < la dod > \clef bass < fad sold >2 
   < mi sold > s2 s2
   s2 s2 s2
+  s2.
+  s2. s2
+  mi'2 mi\> <red fad>\!
+  \time 3/2 \bar "||" <dod mi>2.\p <si red>4\< <lad dod> <red fad>\!
+  
+  <dod mi>2. <si red>4\> lad la!\!
+  s4 \tuplet 3/2 { <sold'' si>8\p ( <fad la> <mi sold> ) } <mi sold>\< <re fad>
+  <re fad>2\! \tuplet 3/2 { <mi sold>8 ( <dod mi> <mi sold> ) }
+}
+
+rightThree = \relative do'' {
+  \global
+  s2*27
+  s2*4
+  s2*3
+  s2*3
+  s2*3
+  la,,1\pp s2
+  
+  
+  
 }
 
 leftOne = \relative do' {
@@ -53,8 +99,18 @@ leftOne = \relative do' {
   s1.
   sold,,1.\pp
   sold1.
-  
   \stemDown sold4 s2 la'4 mi red
+  \stemUp
+  <dod dod'> <si si'> <lad lad'> <red, red'> ~ <red red'>2 ~ <red red'>2. s4 s2
+  s2 s s
+  s2 \stemDown mi''2  <mi sold>  <red fad>
+  <dod mi>2. <si red>4 <lad dod> <red fad>
+  <dod mi>2.  <si red>4 lad la
+  s4 \tuplet 3/2 { <sold'' si>8\p ( <fad la> <mi sold> ) }
+  <mi sold> <re fad> <re fad>2 \clef treble \tuplet 3/2 { <mi sold>8 ( <dod mi> <mi sold> ) }
+  
+  
+  
 }
 
 leftTwo = \relative do' {
@@ -68,6 +124,36 @@ leftTwo = \relative do' {
   do\rest
   < red sold si red >\( < mi la dod mi > < fad si red fad > < mi la dod mi > < red sold si red >\)
   do4\rest \stemUp < fad lad! > < si, la'! > mi2 red4
+  s2 s
+  <red lad'>2 ~ <red lad'>2. re4\rest re2\rest
+  
+  lad4\( red dod2 ~ dod8 lad \tuplet 3/2 { sold [ lad dod ] } \time 4/2
+  \stemDown \bar "||" red8.. fad32 mi4 \stemUp sold8.. si32 <lad sold>4 dod2\) lad ~ \bar "||" \time 3/2
+ lad4 lad8 si \stemDown \tuplet 3/2 { sold lad fad } red4 fad lad
+ ~ \stemUp lad \stemDown \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } \stemUp
+ red4 dod ~ <dod mi> fa\rest \clef treble
+ si' la2. la4
+  
+}
+
+leftThree = \relative do' {
+  \global
+  s2*27
+  s2*4
+  s2*3
+  s2*3
+  s2*3
+  <re,, re,>1. 
+}
+
+leftFour = \relative do' {
+  \global
+  s2*27
+  s2*4
+  s2*3
+  s2*3
+  s2*3
+  s2 s \clef bass < la la,>2
 }
 
 \score {
@@ -76,10 +162,10 @@ leftTwo = \relative do' {
   } <<
     \new Staff = "right" \with {
       midiInstrument = "acoustic grand"
-    } << \rightOne \\ \rightTwo >>
+    } << \rightOne \\ \rightTwo \\ \rightThree>>
     \new Staff = "left" \with {
       midiInstrument = "acoustic grand"
-    } { \clef bass << \leftOne \\ \leftTwo >> }
+    } { \clef bass << \leftOne \\ \leftTwo \\ \leftThree \\ \leftFour >> }
   >>
   \layout { }
   \midi {
