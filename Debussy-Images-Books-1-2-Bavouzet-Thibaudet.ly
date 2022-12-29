@@ -58,7 +58,11 @@ la fad ( re2. ) \clef treble re4 ~ ( \bar "||"
 <sol, sol,>2.\p\( <sold sold,>4 <dod dod,> <red red,>\)
 <red red,>8\( <mi mi,> s2 <red fad>8 <mi sold> q4 <dod mi>8 sold'\)
 
-\stemDown <la, dod mi la>4-.\( q2-- \stemUp <la la'>4--  <sold sold'>-- <fad fad'>8 ( sold'\) )
+\stemDown <la, dod mi la>4-.\p\(_\markup { "( très soutenu )" } q2-- \stemUp <la la'>4--  <sold sold'>-- <fad fad'>8 ( sold'\) )
+
+\stemDown <sold, sid red> <la dod mi> q2 \stemUp <la' la,>4-- <sold sold,>-- <fad fad,>8 <sold sold,>
+
+
 
 
 }
@@ -92,6 +96,8 @@ rightTwo = \relative do'' {
   <re fad>8 ( <dod mi> ) q2 \tuplet 3/2 { <re fad>8\< <dod mi> <re fad>  } <sold si>4 <fadd lad>\!
   <sold dod> <mi dod' mi>2  dod' sold4
   s4 s2 <dod mi>8 <do red> q <si re> \tuplet 3/2 { <lad dod> [ <si re> <sid red> ] }
+  \stemUp sold' la la2 \stemDown <dod, mi>8 <do red> q <sid re>
+  \tuplet 3/2 { <lad dod> [ <si re> <sid red> ] }
   
   
   
@@ -135,6 +141,8 @@ leftOne = \relative do' {
   <lad lad,>2\( <dod dod,> <mi mi,>4 <red red,>\)
   r \stemDown <sold dod>2 dod s4 
   \stemUp <mi, lad dod mi>\arpeggio q2 \stemDown <mi lad> <mi la>4
+  <mi la> q2 q q4
+  q4 q2 q4
   
 }
 
@@ -163,7 +171,10 @@ leftTwo = \relative do' {
  s
  s4 fad'8 sold sold4 <red fad>8 <mi sold> q4 <dod mi>
  s4 s2 <dod mi>8 (<do red>) q (<si re>) \tuplet 3/2 { <lad dod> ([ <si re> <sid red> ] )}
-  
+ <sid red> <dod mi> q2 q8 <dod red> q <sid re> \tuplet 3/2 { <lad dod> [ <si re> <sid red> ] }
+ 
+ 
+ 
 }
 
 leftThree = \relative do' {
@@ -188,6 +199,9 @@ leftFour = \relative do' {
   s2 s1. s2. s4 s 
   <dod dod,>1.
   <la la,>\arpeggio
+  r2 q1
+  r2 q1 ~
+  q2 q1
   
 }
 
