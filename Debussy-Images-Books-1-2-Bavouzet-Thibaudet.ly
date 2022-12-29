@@ -11,11 +11,12 @@ line-width = 186\mm
 #(define top-margin (/ (- paper-height (* 259 mm)) 2))
 #(define bottom-margin (/ (- paper-height (* 253 mm)) 2))
 between-system-padding = 8\mm
- indent = 22\mm
+ indent = 10\mm
 }
 
 \header {
   title = "Debussy: Images, Books 1 & 2 (Bavouzet, Thibaudet)"
+  dedication = \markup \center-column { \fontsize #0.5 \bold "Hommage à Rameau" " " }
   composer = "Debussy"
   tagline = \markup {
     \line { https://youtu.be/3VDUGu8NBmA }
@@ -31,7 +32,7 @@ global = {
 
 rightOne = \relative do'' {
   \global
-  red,4\(\pp sold fad2 ~ \autoBeamOff fad8 red \autoBeamOn \tuplet 3/2 { dod red fad }
+  red,4\(\pp^"Lent et grave" sold fad2 ~ \autoBeamOff fad8 red \autoBeamOn \tuplet 3/2 { dod red fad }
   sold8.. si32 lad4 dod2 lad\)
   r4 lad8\(\< si \tuplet3/2 { sold8 lad fad } red4 fad lad\! ~
   lad\> \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad\)\!
@@ -50,7 +51,14 @@ rightOne = \relative do'' {
  lad4\( \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } red4 dod ~ <dod mi>\)
 \clef bass r4
 \clef treble si''4 ( la2. )  la4 ~
-la fad red2.
+la fad ( re2. ) \clef treble re4 ~ ( \bar "||"
+\time 1/2 re si ) \time 3/2
+
+<sol sol,>2.\p\( <sold sold,>4 <dod dod,> <red red,>\)
+<sol, sol,>2.\p\( <sold sold,>4 <dod dod,> <red red,>\)
+<red red,>8\( <mi mi,> s2 <red fad>8 <mi sold> q4 <dod mi>8 sold'\)
+
+\stemDown <la, dod mi la>4-.\( q2-- \stemUp <la la'>4--  <sold sold'>-- <fad fad'>8 ( sold'\) )
 
 
 }
@@ -76,6 +84,17 @@ rightTwo = \relative do'' {
   <dod mi>2. <si red>4\> lad la!\!
   s4 \tuplet 3/2 { <sold'' si>8\p ( <fad la> <mi sold> ) } <mi sold>\< <re fad>
   <re fad>2\! \tuplet 3/2 { <mi sold>8 ( <dod mi> <mi sold> ) }
+  <mi sold> <re fad> \tuplet 3/2 { <dod mi> ( [ <si re> <la dod> ] ) } <la dod> <sol si>
+  <sol si>2 \clef treble \tuplet 3/2 { <la dod>8 [ <fad la> <la dod> ] }
+  <la dod> <sol si> \tuplet 3/2 { <fad la> [( <mi sol> <re fad> )] } \bar "||"
+  \time 3/2
+  <re fad> ( <dod mi> ) q2 \tuplet 3/2 { <re fad>8\< <dod mi> <re fad>  } <sold si>4 <fadd lad>\!
+  <re fad>8 ( <dod mi> ) q2 \tuplet 3/2 { <re fad>8\< <dod mi> <re fad>  } <sold si>4 <fadd lad>\!
+  <sold dod> <mi dod' mi>2  dod' sold4
+  s4 s2 <dod mi>8 <do red> q <si re> \tuplet 3/2 { <lad dod> [ <si re> <sid red> ] }
+  
+  
+  
 }
 
 rightThree = \relative do'' {
@@ -86,6 +105,7 @@ rightThree = \relative do'' {
   s2*3
   s2*3
   la,,1\pp s2
+  s2 s \stemDown \clef bass re2
   
   
   
@@ -108,14 +128,19 @@ leftOne = \relative do' {
   <dod mi>2.  <si red>4 lad la
   s4 \tuplet 3/2 { <sold'' si>8\p ( <fad la> <mi sold> ) }
   <mi sold> <re fad> <re fad>2 \clef treble \tuplet 3/2 { <mi sold>8 ( <dod mi> <mi sold> ) }
-  
-  
+  <mi sold> <re fad> \tuplet 3/2 { <dod mi> ([ <si re> <la dod> ]) } <la dod> <sold si>
+  <sold si>2 \tuplet 3/2 { <la dod>8 [ <fad la> <la dod> ] } \bar "||"
+  \time 1/2 <la dod> <sol si> \tuplet 3/2 { <fad la> [ <mi sol> <re fad> ] } \bar "||" \time 3/2
+  \stemUp <lad! lad,!>2\( <dod dod,> <mi mi,>4 <red red,>\)
+  <lad lad,>2\( <dod dod,> <mi mi,>4 <red red,>\)
+  r \stemDown <sold dod>2 dod s4 
+  \stemUp <mi, lad dod mi>\arpeggio q2 \stemDown <mi lad> <mi la>4
   
 }
 
 leftTwo = \relative do' {
   \global
-  red,4\( sold fad2 ~ fad8 red \tuplet 3/2 { dod red fad }
+  red,4\( sold fad2 ~ fad8 red \tuplet 3/2 { dod [ red fad ] }
   sold8.. si32 lad4 dod2 lad\)
   dod,4\rest lad'8\( si \tuplet 3/2 { sold lad fad } red4 fad lad ~
   lad \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad\)
@@ -132,7 +157,12 @@ leftTwo = \relative do' {
  lad4 lad8 si \stemDown \tuplet 3/2 { sold lad fad } red4 fad lad
  ~ \stemUp lad \stemDown \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } \stemUp
  red4 dod ~ <dod mi> fa\rest \clef treble
- si' la2. la4
+ si' la2. la4 ~ la fad \clef bass re2. re4 ~
+ re si 
+ s1.
+ s
+ s4 fad'8 sold sold4 <red fad>8 <mi sold> q4 <dod mi>
+ s4 s2 <dod mi>8 (<do red>) q (<si re>) \tuplet 3/2 { <lad dod> ([ <si re> <sid red> ] )}
   
 }
 
@@ -154,6 +184,11 @@ leftFour = \relative do' {
   s2*3
   s2*3
   s2 s \clef bass < la la,>2
+  s2 s \clef bass < sol, sol,> s4
+  s2 s1. s2. s4 s 
+  <dod dod,>1.
+  <la la,>\arpeggio
+  
 }
 
 \score {
