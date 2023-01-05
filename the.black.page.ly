@@ -6,7 +6,7 @@
   instrument = "Marimba"
   composer = "Frank Zappa"
   copyright = "[ 15.12.2022 ]"
-  tagline = "https://www.youtube.com/watch?v=WDR1j1fwhtA&ab_channel=brennenrigley"
+  tagline = "https://youtu.be/WDR1j1fwhtA"
 }
 
 \paper {
@@ -104,7 +104,7 @@ partition = \relative do'' {
   }
   \tuplet 11/8 { sib32 solb solb lab fa reb reb mib sol, lab' fa }
   \tuplet 11/8 { fa mib solb fa reb mib lab reb, solb fa, mib }
-  do'1
+  do'1 \bar ".."
 }
 
 \score {
