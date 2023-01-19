@@ -1,8 +1,6 @@
 #(set-global-staff-size 19)
-
 \version "2.22.0"
 \include "italiano.ly"
-
 
 \paper {
 
