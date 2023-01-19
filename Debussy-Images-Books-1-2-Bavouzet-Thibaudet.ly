@@ -64,7 +64,7 @@ rightOne = \relative do'' {
   <sold, sid red sold>\< <si re fad si> q2\! q8\<\( <dod mid sold dod> q4 <mi sold si mi>8 <dod mid sold dod>
   q <si re fad si> q2\!\) q8\<\( <dod mi sold dod> q4 <mi mi'>8 <fad fad'>\!\)
 
-  <sold sid red sold>1.\p \laissezVibrer
+  <sold sid red sold>1.\f ~ q\p \laissezVibrer
 
   <sold sid red sold>4 \repeatTie s s2 s
 
@@ -104,9 +104,9 @@ rightTwo = \relative do'' {
   \tuplet 3/2 { <lad dod> [ <si re> <sid red> ] }
   s1.
   s2 s s4 <sold' si>4
-  s <sold sold'>^. <fad fad'>2^\portato <red~ red'>^\portato
+  s1. s4 <sold sold'>4^. <fad fad'>2^\portato <red~ red'>^\portato
   red4 \stemUp sold,-. \> \p ^( fad2-- ~ fad8 red \tuplet 3/2 { dod [ red fad ] } \!
-  sold8.. si32 lad4 s2 s ^)
+  sold8.. si32 lad4  <dod, mi sold dod>2\portato \> <lad dod red fad lad>\portato ^) \!
 
 
 
@@ -124,9 +124,9 @@ rightThree = \relative do'' {
   s1
   s1.*6 s2 s
   sol'4\rest s4 s2 s
-  fa,4\rest  s s2 s4 <mi la>
-  <si' sold> <lad! mi' sold> <dod mi sold dod>2\> <lad dod red fad lad>\!
-
+  fa4\rest  s s2 s2
+  sol,4\rest
+  
 
 
 }
@@ -219,7 +219,8 @@ leftFour = \relative do' {
   <la la,>\arpeggio
   r2 q1
   r2 q1 ~ \clef bass
-  q2 q1
+  q2 q1 
+  <sold, sold' red' sold sid>1.
 
 }
 
