@@ -12,6 +12,11 @@
   #(define bottom-margin (/ (- paper-height (* 253 mm)) 2))
   between-system-padding = 8\mm
   indent = 10\mm
+  #(define fonts
+    (set-global-fonts
+     #:music "emmentaler"
+     #:brace "emmentaler"
+   ))
 }
 
 \header {
