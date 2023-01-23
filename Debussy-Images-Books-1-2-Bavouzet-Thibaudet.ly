@@ -18,7 +18,7 @@
 }
 
 \header {
-  title = "Debussy: Images, Books 1 & 2 (Bavouzet, Thibaudet)"
+  title = "Hommage à Rameau"
   dedication = \markup \center-column { \fontsize #0.5 \bold "Hommage à Rameau" " " }
   composer = "Debussy"
   tagline = \markup {
@@ -128,7 +128,9 @@ rightThree = \relative do'' {
   s1.*6 s2 s
   sol'4\rest s4 s2 s
   fa4\rest  s s2 s2
-  sol,4\rest
+  sol,4\rest s2 s2 <mi la>4
+  <sold si sold'> <lad! mi' sold> s2 s
+  
   
 
 
@@ -221,9 +223,9 @@ leftFour = \relative do' {
   <dod dod,>1.
   <la la,>\arpeggio
   r2 q1
-  r2 q1 ~ \clef bass
+  r2 q1 ~ 
   q2 q1 
-  <sold, sold' red' sold sid>1.
+  \clef bass \acciaccatura { sold,16 sold'^~ } <sold, sold' red' sold sid>1.
 
 }
 
