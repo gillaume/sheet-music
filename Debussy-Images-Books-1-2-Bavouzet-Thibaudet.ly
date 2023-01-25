@@ -1,4 +1,4 @@
-#(set-global-staff-size 19)
+#(set-global-staff-size 15)
 \version "2.22.0"
 \include "italiano.ly"
 
@@ -10,11 +10,11 @@
   #(define bottom-margin (/ (- paper-height (* 253 mm)) 2))
   between-system-padding = 8\mm
   indent = 10\mm
-  #(define fonts
-    (set-global-fonts
-     #:music "emmentaler"
-     #:brace "emmentaler"
-   ))
+ % #(define fonts
+  %  (set-global-fonts
+   %  #:music "emmentaler"
+    % #:brace "emmentaler"
+   %))
 }
 
 \header {
@@ -110,6 +110,10 @@ rightTwo = \relative do'' {
   s1. s4 <sold sold'>4^. <fad fad'>2^\portato <red~ red'>^\portato
   red4 \stemUp sold,-. \> \p ^( fad2-- ~ fad8 red \tuplet 3/2 { dod [ red fad ] } \!
   sold8.. si32 lad4  <dod, mi sold dod>2\portato \> <lad dod red fad lad>\portato ^) \!
+  r4 lad'8^. si^. \tuplet 3/2 { sold lad fad } red4^\portato fad^\portato lad^\portato
+  
+  \clef bass r4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad
+  sold2-_ sold-_
 
 
 
@@ -130,6 +134,9 @@ rightThree = \relative do'' {
   fa4\rest  s s2 s2
   sol,4\rest s2 s2 <mi la>4
   <sold si sold'> <lad! mi' sold> s2 s
+  s4 <dod red>2 q q4 
+  s \stemUp red2 lad red,4 ~ red1 red2\rest
+  
   
   
 
@@ -185,7 +192,7 @@ leftTwo = \relative do' {
   lad4 lad8 si \stemDown \tuplet 3/2 { sold lad fad } red4 fad lad
   ~ \stemUp lad \stemDown \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } \stemUp
   red4 dod ~ <dod mi> fa\rest \clef treble
-  si' la2. la4 ~ la fad \clef bass re2. re4 ~
+  si' la2. la4 ^~ la fad \clef bass re2. re4 ~
   re si
   s1.
   s
@@ -195,6 +202,9 @@ leftTwo = \relative do' {
   <sid red> <re fad> q2 q8 <mid sold> q4 \clef treble <sold si>8 <mid sold>
 
   \clef bass <re mid sold> <re fad> q2 q8 <mid sold> q4 \clef treble mi8 fad \clef bass
+  red4^_ sold^_ fad2^_ red^_ ^~
+  red4^. sold^_ fad2^_ red^_ ^~
+  red4
 
 
 
@@ -225,7 +235,9 @@ leftFour = \relative do' {
   r2 q1
   r2 q1 ~ 
   q2 q1 
-  \clef bass \acciaccatura { sold,16 sold'^~ } <sold, sold' red' sold sid>1.
+  \clef bass \acciaccatura { sold,16 sold'^~ } <sold, sold' red' sold sid>1. ~
+  q ~ q4 do'\rest re2\rest do4\rest <la, la'>
+  <mi' mi'> <dod dod'> <lad lad'>2 <red red'>
 
 }
 
