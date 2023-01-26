@@ -193,7 +193,7 @@ leftTwo = \relative do' {
   lad4 lad8 si \stemDown \tuplet 3/2 { sold lad fad } red4 fad lad
   ~ \stemUp lad \stemDown \tuplet 3/2 { dod8 lad si } \tuplet 3/2 { sold lad fad } \stemUp
   red4 dod ~ <dod mi> fa\rest \clef treble
-  si' la2. la4 ^~ la fad \clef bass re2. re4 ~
+  si' la2. la4 ^~ la fad \clef bass re2. re4 ^~
   re si
   s1.
   s
