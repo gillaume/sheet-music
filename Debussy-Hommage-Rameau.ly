@@ -1,4 +1,4 @@
-#(set-global-staff-size 15)
+#(set-global-staff-size 19)
 \version "2.22.0"
 \include "italiano.ly"
 
@@ -110,10 +110,11 @@ rightTwo = \relative do'' {
   s1. s4 <sold sold'>4^. <fad fad'>2^\portato <red~ red'>^\portato
   red4 \stemUp sold,-. \> \p ^( fad2-- ~ fad8 red \tuplet 3/2 { dod [ red fad ] } \!
   sold8.. si32 lad4  <dod, mi sold dod>2\portato \> <lad dod red fad lad>\portato ^) \!
-  r4 lad'8^. si^. \tuplet 3/2 { sold lad fad } red4^\portato fad^\portato lad^\portato
+  r4\pp lad'8^. ^( si^. \tuplet 3/2 { sold lad fad } red4^\portato fad^\portato lad^\portato ^)
   
-  \clef bass r4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad
-  sold2-_ sold-_
+  \clef bass r4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4\> dod lad \! 
+  sold2-_ sold-_ s
+  
 
 
 
@@ -135,7 +136,7 @@ rightThree = \relative do'' {
   sol,4\rest s2 s2 <mi la>4
   <sold si sold'> <lad! mi' sold> s2 s
   s4 <dod red>2 q q4 
-  s \stemUp red2 lad red,4 ~ red1 red2\rest
+  s \stemUp red2 ^( lad red,4 ^) ~ red1 red2\rest
   
   
   
@@ -204,8 +205,10 @@ leftTwo = \relative do' {
   \clef bass <re mid sold> <re fad> q2 q8 <mid sold> q4 \clef treble mi8 fad \clef bass
   red4^_ sold^_ fad2^_ red^_ ^~
   red4^. sold^_ fad2^_ red^_ ^~
-  red4
-
+  red4 s2 s s4 s1.
+  s4 lad8^. si^. \tuplet 3/2 { sold lad fad } red4 fad lad
+  s4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad 
+  sold2-- sold r4 <sold sold'>
 
 
 }
@@ -218,6 +221,9 @@ leftThree = \relative do' {
   s2*3
   s2*3
   <re,, re,>1.
+  s1. s1 s1*15 s2 s2
+  sold,1._-
+  \stemDown sold2_-
 }
 
 leftFour = \relative do' {
@@ -236,8 +242,11 @@ leftFour = \relative do' {
   r2 q1 ~ 
   q2 q1 
   \clef bass \acciaccatura { sold,16 sold'^~ } <sold, sold' red' sold sid>1. ~
-  q ~ q4 do'\rest re2\rest do4\rest <la, la'>
-  <mi' mi'> <dod dod'> <lad lad'>2 <red red'>
+  q ~ q4 do'\rest re2\rest do4\rest <la, la'> ^( 
+  <mi' mi'> <dod dod'> <lad lad'>2 <red red'> ^)
+  do'4\rest <sold red'>2 q q4
+  do4\rest \stemUp red2 lad red,4 ~
+  red1
 
 }
 
