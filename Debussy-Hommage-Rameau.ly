@@ -113,7 +113,7 @@ rightTwo = \relative do'' {
   r4\pp lad'8^. ^( si^. \tuplet 3/2 { sold lad fad } red4^\portato fad^\portato lad^\portato ^)
   
   \clef bass r4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4\> dod lad \! 
-  sold2-_ sold-_ s
+  sold2-_ sold-_ s \clef treble
   
 
 
@@ -208,7 +208,10 @@ leftTwo = \relative do' {
   red4 s2 s s4 s1.
   s4 lad8^. si^. \tuplet 3/2 { sold lad fad } red4 fad lad
   s4 \stemDown \tuplet 3/2 { dod,8 lad si } \tuplet 3/2 { sold lad fad } red4 dod lad 
-  sold2-- sold r4 <sold sold'>
+  sold2-- sold r4 <sold sold'> ~
+  q1 sold'2 ~
+  sold1. 
+  r2 sold,1
 
 
 }
@@ -246,7 +249,10 @@ leftFour = \relative do' {
   <mi' mi'> <dod dod'> <lad lad'>2 <red red'> ^)
   do'4\rest <sold red'>2 q q4
   do4\rest \stemUp red2 lad red,4 ~
-  red1
+  red1 s2
+  <red' sold>2. re!4 red ~ red8. <mi la>16
+  <mid lad!>1.
+  <red fad la!> fad
 
 }
 
